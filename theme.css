@@ -1,0 +1,437 @@
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+/* Webkit browsers like Safari and Chrome */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('PT Sans'), local('PTSans-Regular'), url(/css/fonts/ptsans/yrzXiAvgeQQdopyG8QSg8Q.woff) format('woff');
+}
+@font-face {
+    font-family: 'PT Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('PT Sans Bold'), local('PTSans-Bold'), url(/css/fonts/ptsans/g46X4VH_KHOWAAa-HpnGPhsxEYwM7FgeyaSgU71cLG0.woff) format('woff');
+}
+@font-face {
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Droid Sans'), local('DroidSans-Regular'), url(/css/fonts/droid-sans/DroidSans.woff) format('woff');
+}
+@font-face {
+    font-family: 'Droid Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Droid Sans Bold'), local('DroidSans-Bold'), url(/css/fonts/droid-sans/DroidSans-Bold.woff) format('woff');
+}
+
+html {
+    background: #F4F4F4;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    min-width: 600px;
+    background: #F4F4F4;
+}
+
+header .logo {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+input[type=submit] {
+    width: 245px;
+}
+
+input[type=submit]:focus {
+    background: #09d7ba;
+    color: white !important;
+}
+input[type=submit]:hover {
+    background-color: #09d7ba;
+    color: white !important;
+}
+
+header .logo a {
+    display: inline-block;
+}
+
+.payment-info {
+    height: 32px;
+    width: 100%;
+    color: rgba(0,0,0,0.87);
+    font-family: "Segoe UI";
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    margin-bottom: 21px;
+}
+
+.bill-info {
+    height: 21px;
+    width: 100%;
+    color: #00aa90;
+    font-family: "Segoe UI";
+    font-size: 16px;
+    line-height: 21px;
+    text-align: center;
+}
+
+.invoice-line {
+    background: white;
+    color: black;
+    margin-top: 10px;
+    padding: 12px 10px;
+}
+
+.invoice-line p {
+    margin: 0px;
+}
+
+.invoice-line .invoice-info {
+    font-size: 14px;
+    line-height: 18px;
+    margin-bottom: 7px;
+}
+.pay-form-frame {
+    width: 80%;
+    margin: auto;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.12), 0 2px 5px 0 rgba(0,0,0,0.15);
+    max-width: 700px;
+    min-width: 700px;
+}
+.invoice-line .invoice-summ {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.invoice-line .invoice-summ .summ {
+    font-size: 38px;
+}
+
+.invoice-line .invoice-from {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.pay_big, .pay_small {
+    font-family: 'Droid Sans', 'PT Sans', sans-serif;
+}
+
+.pay-choice-head {
+    margin-top: 15px;
+}
+
+.textinput {
+    padding: 0px;
+}
+
+.card_block > div > div > .textinput.col-xs-4:first-child {
+    margin-left: 0;
+}
+
+.card_block > div > div > .textinput.col-xs-4 {
+    width: 31.33333333%;
+    margin-left: 3%;
+}
+
+.input-error {
+    border: 1px solid red;
+}
+
+.info {
+    color: #b9b9b9;
+    font-size: 10px;
+}
+.error {
+    color: #f84d5d;
+}
+
+.input-card, .input-exp_month, .input-exp_year, .input-card_holder, .input-cvc2 {
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.input-card {
+    padding: 5px 15px 5px 40px;
+    --background: #fff url('credit-card-2x.png') no-repeat left 8px top 9px;
+    background: #fff;
+    margin-top: 0;
+    background-size: 25px;
+}
+
+.input-exp_month, .input-exp_year {
+    padding: 5px 5px 5px 30px;
+    --background: #fff url('calendar-2x.png') no-repeat left 6px top 13px;
+    background: #fff;
+    background-size: 18px;
+}
+
+.input-cvc2 {
+    padding: 5px 25px 5px 30px;
+    --background: #fff url('lock-2x.png') no-repeat left 6px top 10px;
+    background: #fff;
+    background-size: 21px 21px;
+}
+
+.textinput #toggle-icon {
+    position: absolute;
+    right: 8px;
+    top: 16px;
+    padding: 13px;
+    cursor: pointer;
+}
+
+.eye-icon {
+    width: 16px;
+    height: 16px;
+    --background: url('eye-2x.png') no-repeat;
+    background: #fff;
+    background-position: 5px;
+    background-size: 16px;
+}
+
+.eye-blocked-icon {
+    width: 16px;
+    height: 16px;
+    --background: url('eye-blocked-2x.png') no-repeat;
+    background: #fff;
+    background-position: 5px;
+    background-size: 16px;
+}
+
+.input-card_holder {
+    padding: 5px 5px 5px 30px;
+    --background: #fff url('person-2x.png') no-repeat left 10px top 12px;
+    background: #fff;
+    background-size: 14px;
+}
+
+.input-help, .email-info.info {
+    display: block;
+    text-align: left;
+    font-size: 12px;
+    margin: 0px 0px 0px 8px;
+    color: #42454a;
+}
+
+.input-help.span-error {
+    --color: red;
+}
+
+.btn {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 1px;
+    background: #08bfa5;
+    color: #fff;
+    font-size: 23px;
+    font-weight: normal;
+    min-width: 305px;
+    margin: 0 auto;
+    width: 245px;
+    margin-bottom: 48px;
+    margin-top: 35px;
+} 
+
+.btn:hover {
+    background: #09d7ba;
+}
+
+.footer {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 15px;
+    color: #7e7e7e;
+    margin-top: 60px;
+}
+
+.footer .copyright a {
+    color: #f84d5d;
+    text-decoration: underline;
+}
+
+.footer .cert-logo {
+    text-align: center;
+    margin-top: 20px;
+}
+.footer .cert-logo .cert-logo-icon {
+    display: inline-block;
+    margin: 7px;
+    width: 83px;
+    height: 33px;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: contain;
+}
+
+.footer .cert-logo .cert-logo-icon#mastercard-mono {
+    background-image: url("mastercard-mono.png");
+}
+.footer .cert-logo .cert-logo-icon#mastercard-securecode-mono {
+    background-image: url("mastercard-securecode-mono.png");
+}
+.footer .cert-logo .cert-logo-icon#maestro-mono {
+    background-image: url("maestro-mono.png");
+}
+.footer .cert-logo .cert-logo-icon#visa-mono {
+    background-image: url("visa-mono.png");
+}
+.footer .cert-logo .cert-logo-icon#mir-mono {
+    background-image: url("mir-mono.png");
+}
+.footer .cert-logo .cert-logo-icon#pcidss-mono {
+    background-image: url("pcidss-mono.png");
+}
+.footer .cert-logo .cert-logo-icon#thawte-mono {
+    background-image: url("thawte-mono.png");
+}
+
+@media (min-width: 1500px) {
+    /*.footer .cert-logo {
+        margin-top: 40px;
+    }*/
+}
+@media (max-width: 991px) {
+    /*.pay_big {
+        display: none;
+    }
+    .pay_small {
+        display: block;
+        text-align: left;
+        padding-left: 20px;
+        font-size: 22px;
+    }*/
+}
+@media (min-width: 0px) {
+
+    header .info {
+        margin-top: 4px;
+        padding-left: 50px;
+        padding-top: 13px;
+        background: url('ico_operator.png') no-repeat left top 10px;
+        height: 54px;
+    }
+    header .info .supportlink {
+        font-size: 15px;
+        color: #f84d5d;
+        text-decoration: underline;
+    }
+
+    header .logo {
+        --text-align: left;
+    }
+
+    .supportlink-container {
+        display: inline-block;
+        line-height: 42px;
+        height: 42px;
+    }
+
+    .pay_big {
+        display: block;
+        font-size: 26px;
+    }
+    .pay_small {
+        display: none;
+    }
+    .card_block {
+        position: relative;
+        float: none;
+        width: 750px;
+        height: 320px;
+        padding: 25px 15px;
+        background: url('card_bg.png') no-repeat left top;
+        margin-left: 22px;
+    }
+
+    .textinput {
+        margin-bottom: 5px;
+    }
+
+    .input-help {
+        --color: #4c4c4c;
+    }
+
+    .cart_cvc2 {
+        position: absolute;
+        top: 143px;
+        left: 445px;
+    }
+    .card_block > div > div > .textinput.col-md-6:nth-of-type(-n+2) {
+        width: 48%;
+        margin-left: 0;
+    }
+    .card_block > div > div > .textinput.col-md-6:nth-of-type(2) {
+        margin-left: 4%;
+    }
+    .card_block_submit {
+        float: none;
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    /*.footer .copyright {
+        line-height: 96px;
+    }
+
+    .footer .cert-logo {
+        float: right;
+        margin-left: 0;
+        width: 450px;
+        margin-top: 0;
+    }*/
+}
+@media (min-width: 1200px) {
+    /*.card_block {
+        right: -185px;
+        margin: 0 auto;
+    }*/
+}
+
+.bank_link {
+    float: left;
+    margin-left: 5px;
+}
+
+.link {
+    color: #00aa90;
+}
+
+.help_link {
+    float: right;
+    margin-right: 5px;
+}
+
+.visible-xs-inline {
+    display: none !important;
+}
+
+.help_text {
+    color: rgba(0,0,0,0.45);
+    font-family: "Segoe UI";
+    font-size: 14px;
+}
+
+a:hover {
+    color: #09d7ba;
+}
+
+a:focus {
+    color: #09d7ba;
+}
