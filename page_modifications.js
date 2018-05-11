@@ -69,7 +69,7 @@ $(document).ready(function() {
     $(".cert-logo.col-lg-4.col-md-4.text-left.col-lg-offset-3.col-md-offset-3").css("margin-top", "40px");
     $(".copyright.col-lg-5.col-md-5.col-sm-12.col-sx-12").remove();
     var summ = $(".summ").html();
-    $(".btn.btn-block.btn-lg").val(`Оплатить ${summ} &#8381;`);
+    $(".btn.btn-block.btn-lg").val(`Оплатить ${summ} ₽`);
     $(".logo.col-lg-5.col-md-5.col-sm-12.col-sx-12").css("width", "100%");
     $(".info.col-lg-4.col-md-4.visible-lg-block.visible-md-block.text-left.col-lg-offset-3.col-md-offset-3").remove();
     $(".pay-methods").children(".container").addClass("pay-form-frame");
