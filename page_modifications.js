@@ -96,8 +96,10 @@ $(document).ready(function() {
     $(".help-exp_year.help_text.input-help").toggleClass("help-exp_year");
     $(".row.pay-choice-head").html(infoDiv);
     $(".invoice-line").remove();
-    $(".btn").css("width", "245px");
-    $(".btn").css("margin-top", "20px");
+    $(".btn").css({
+        width: "auto",
+        marginTop: "17px",
+    });
     $(".input-exp_year").attr("placeholder", "");
     $(".input-cvc2").attr("placeholder", "");
     $(".input-card_holder").attr("placeholder", "");
@@ -112,18 +114,12 @@ $(document).ready(function() {
     //$(".help-exp_year").html("Год");
     //$(".help-exp_month").html("Месяц");
     $(".cert-logo.col-lg-4.col-md-4.text-left.col-lg-offset-3.col-md-offset-3").remove();
-    $(".footer").css("margin", "0 auto");
-    $(".footer").css("width", "700px");
-    $(".footer .container").css("display", "flex");
-    $(".footer .container").css("width", "700px");
-    $(".footer .container").css("margin-top", "13px");
-    $(".footer .container .row").css("width", "700px");
     var bankLink =
-        "<div class='bank_link'>© <a class='link' href='http://rficb.ru/'>RFI Bank JSC</a> — банк для онлайн предпринимателей</div>";
-    var helpLink =
-        "<div class='help_link'><a class='link' href='http://help.rficb.ru/'>Помощь</a></div>";
+        "<div class='bank_link'><a class='link' href='http://rficb.ru/'>RFI Bank JSC</a> — банк для онлайн предпринимателей</div>";
+    var contacts =
+        "<div class='contacts'><span>8 800 500-70-54</span><span class='dot'>&bull;</span><a class='link grey' href='mailto:office@rfibank.ru'>office@rfibank.ru</a></div>";
 
-    $(".footer .container .row").html(bankLink + helpLink);
+    $(".footer .container .row").html(bankLink + contacts);
     $(".col-md-6.col-xs-4.textinput.validating").css("max-width", "66px");
     $("#PayForm_exp_year").css("max-width", "66px");
     $("#PayForm_cvc2").css("max-width", "76px");

@@ -258,12 +258,15 @@ header .logo a {
 }
 
 .footer {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin: 26px auto 0;
     text-align: center;
     font-size: 15px;
-    color: #7e7e7e;
-    margin-top: 60px;
+    color: #808080;
+    width: 1060px;
+}
+
+.footer .container {
+    width: 100%;
 }
 
 .footer .copyright a {
@@ -414,10 +417,30 @@ header .logo a {
 }
 
 .link {
-    color: #00aa90;
+    color: #00AA90;
+    text-decoration: none;
 }
 
-.help_link {
+.link:hover,
+.link:active {
+    color: #00BDA0;
+    text-decoration: none;
+}
+
+.link:focus {
+    text-decoration: none;
+}
+
+.link.grey {
+    color: #808080;
+}
+
+.link.grey:hover,
+.link.grey:active {
+    color: #00AA90;
+}
+
+.contacts {
     float: right;
     margin-right: 5px;
 }
@@ -503,4 +526,10 @@ a:focus {
 
 .card-container::after {
     content: '';
+}
+
+.dot {
+    margin: 0 15px;
+    font-size: 11px;
+    opacity: 0.6;
 }
