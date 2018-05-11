@@ -38,7 +38,7 @@ html {
 }
 
 body {
-    font-family: 'PT Sans', sans-serif;
+    font-family: 'Segoe UI';
     min-width: 600px;
     background: #F4F4F4;
 }
@@ -47,19 +47,6 @@ header .logo {
     margin-top: 10px;
     text-align: center;
     margin-bottom: 25px;
-}
-
-input[type=submit] {
-    width: 245px;
-}
-
-input[type=submit]:focus {
-    background: #09d7ba;
-    color: white !important;
-}
-input[type=submit]:hover {
-    background-color: #09d7ba;
-    color: white !important;
 }
 
 header .logo a {
@@ -109,8 +96,9 @@ header .logo a {
     border-radius: 5px;
     background: white;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.12), 0 2px 5px 0 rgba(0,0,0,0.15);
-    max-width: 700px;
-    min-width: 700px;
+    max-width: 1060px;
+    min-width: 1060px;
+    padding: 0 146px;
 }
 .invoice-line .invoice-summ {
     font-size: 20px;
@@ -163,26 +151,27 @@ header .logo a {
 
 .input-card, .input-exp_month, .input-exp_year, .input-card_holder, .input-cvc2 {
     font-size: 20px;
-    margin-top: 5px;
+    margin-top: 10px;
+    border-radius: 0;
+    font-family: "Segoe UI";
+    font-size: 24px;
+    padding: 14px 19px 18px;
+    height: 55px;
 }
 
 .input-card {
-    padding: 5px 15px 5px 40px;
     --background: #fff url('credit-card-2x.png') no-repeat left 8px top 9px;
     background: #fff;
-    margin-top: 0;
     background-size: 25px;
 }
 
 .input-exp_month, .input-exp_year {
-    padding: 5px 5px 5px 30px;
     --background: #fff url('calendar-2x.png') no-repeat left 6px top 13px;
     background: #fff;
     background-size: 18px;
 }
 
 .input-cvc2 {
-    padding: 5px 25px 5px 30px;
     --background: #fff url('lock-2x.png') no-repeat left 6px top 10px;
     background: #fff;
     background-size: 21px 21px;
@@ -215,7 +204,6 @@ header .logo a {
 }
 
 .input-card_holder {
-    padding: 5px 5px 5px 30px;
     --background: #fff url('person-2x.png') no-repeat left 10px top 12px;
     background: #fff;
     background-size: 14px;
@@ -236,20 +224,37 @@ header .logo a {
 .btn {
     margin-top: 20px;
     margin-bottom: 20px;
-    border-radius: 1px;
-    background: #08bfa5;
     color: #fff;
-    font-size: 23px;
+    font-size: 22px;
     font-weight: normal;
     min-width: 305px;
     margin: 0 auto;
     width: 245px;
     margin-bottom: 48px;
     margin-top: 35px;
-} 
+    background-image: linear-gradient(-180deg, #00B99D 0%, #009881 100%);
+    box-shadow: 0 0 0 1px rgba(0,113,96,0.70), 0 1px 0 0 rgba(0,79,67,0.50);
+    border-radius: 2px;
+    border: 0;
+    padding: 17px 30px;
+}
 
 .btn:hover {
-    background: #09d7ba;
+    background-image: linear-gradient(#00A38B,#00806D);
+    box-shadow: 0 1px 0 0 #335f59, 0 0 0 1px #4c8a81;
+    color: #fff;
+}
+
+.btn:active {
+    background: #007261;
+    box-shadow: 0 -1px 0 0 #33534e, 0 0 0 1px #4c746f, inset 0 1px 2px 0 rgba(0,0,0,.1);
+    color: #fff;
+}
+
+.btn:focus {
+    color: #fff;
+    border: 0;
+    outline: none;
 }
 
 .footer {
@@ -355,8 +360,7 @@ header .logo a {
         float: none;
         width: 750px;
         height: 320px;
-        padding: 25px 15px;
-        background: url('card_bg.png') no-repeat left top;
+        padding: 0;
         margin-left: 22px;
     }
 
@@ -370,7 +374,7 @@ header .logo a {
 
     .cart_cvc2 {
         position: absolute;
-        top: 143px;
+        top: 118px;
         left: 445px;
     }
     .card_block > div > div > .textinput.col-md-6:nth-of-type(-n+2) {
@@ -423,9 +427,11 @@ header .logo a {
 }
 
 .help_text {
-    color: rgba(0,0,0,0.45);
     font-family: "Segoe UI";
-    font-size: 14px;
+    font-size: 18px;
+    margin: 0;
+    color: #808080;
+    line-height: 20px;
 }
 
 a:hover {
@@ -434,4 +440,67 @@ a:hover {
 
 a:focus {
     color: #09d7ba;
+}
+
+.date {
+    float: right;
+}
+
+.help_date {
+    text-align: right;
+    padding-right: 50px;
+}
+
+.delimiter {
+    float: left;
+    margin-top: 10px;
+}
+
+.card-name {
+    background: #ddd;
+    margin-top: -40px;
+    margin-right: -40px;
+    float: right;
+    border-radius: 0 18px;
+    font-size: 18px;
+    padding: 20px 40px;
+}
+
+.card-logo {
+    display: inline-block;
+    vertical-align: middle;
+    background: url(./logo_mastercard_card.svg) no-repeat;
+    width: 49px;
+    height: 41px;
+    margin-left: 20px;
+}
+
+.back_side {
+    width: 582px;
+    background: #E5E5E5;
+    border: 1px solid #E0E0E0;
+    border-radius: 18px;
+    padding-top: 30px;
+    height: 351px;
+    position: absolute;
+    left: 156px;
+    top: 33px;
+    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.05);
+}
+
+.band {
+    background: #C9C9C9;
+    float: right;
+    width: 178px;
+    height: 60px;
+}
+
+.help-cvc2 {
+    display: inline-block;
+    font-size: 12px;
+    margin-top: 9px;
+}
+
+.card-container::after {
+    content: '';
 }

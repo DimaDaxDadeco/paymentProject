@@ -103,11 +103,9 @@ $(document).ready(function() {
     $(".input-card_holder").attr("placeholder", "");
     $(".input-exp_month").attr("placeholder", "");
     $(".input-card-unmasked").attr("placeholder", "");
-    $(".input-exp_year").css("max-width", "158.4px");
+    $(".input-exp_year").css("max-width", "66px");
     $(".input-cvc2").css("max-width", "112.8px");
-    $(".input-card_holder").css("max-width", "330px");
-    $(".input-exp_month").css("max-width", "158.4px");
-    $(".input-card-unmasked").css("max-width", "330px");
+    $(".input-exp_month").css("max-width", "66px");
     $(".card_block_submit").toggleClass("col-md-5");
     $(".card_block_submit").toggleClass("col-md-offset-4");
     $(".card_block_submit").toggleClass("card_block_submit");
@@ -126,30 +124,94 @@ $(document).ready(function() {
         "<div class='help_link'><a class='link' href='http://help.rficb.ru/'>Помощь</a></div>";
 
     $(".footer .container .row").html(bankLink + helpLink);
-    $(".col-md-6.col-xs-4.textinput.validating").css("max-width", "158.4px");
-    $("#PayForm_exp_year").css("margin-left", "10px");
-    $("#PayForm_exp_year").css("max-width", "158.4px");
-    $("#PayForm_cvc2").css("max-width", "95px");
+    $(".col-md-6.col-xs-4.textinput.validating").css("max-width", "66px");
+    $("#PayForm_exp_year").css("max-width", "66px");
+    $("#PayForm_cvc2").css("max-width", "76px");
 
     $(".col-md-6.col-xs-4.textinput.cart_cvc2").css("max-width", "100px");
     $(".col-md-6.col-xs-4.textinput.cart_cvc2").css("margin-left", "20px");
     $(".text-center .col-md-12.col-xs-12.textinput.validating").css("margin-right", "10000px");
-    $(".col-md-6.col-xs-12").css("width", "400px");
-    $(".col-md-12.col-xs-12.textinput").css("margin-right", "0px");
+    $(".col-md-6.col-xs-12").css({
+        width: "582px",
+        background: "#EBEBEB",
+        border: "1px solid #E7E4E4",
+        boxShadow: "6px 6px 15px 0 rgba(0, 0, 0, 0.07)",
+        borderRadius: "18px",
+        padding: "40px"
+    });
+    $(".col-md-6.col-xs-12").addClass('card-container')
+    $(".col-md-6.col-xs-12").prepend("<div class='card-name'></div>")
+    $(".card-name").append("<span>Бизнес-карта</span><div class='card-logo'></div>");
+    $(".col-md-12.col-xs-12.textinput").css({
+        marginRight: "0px",
+        paddingTop: "25px"
+    });
+    $(".text-center .col-md-12.col-xs-12.textinput").css({
+        paddingTop: "18px"
+    })
     //$(".input-help.help-cvc2").html("CVC");
 
     $("#toggle-icon").remove();
 
-    $(".input-help.help-exp_year").toggleClass("help_text");
-    $(".input-help.help-exp_month").toggleClass("help_text");
     $(".input-help.help-card").toggleClass("help_text");
     $(".input-help.help-card_holder").toggleClass("help_text");
     $(".input-help.help-cvc2").toggleClass("help_text");
 
     $(".col-md-6.col-xs-4.textinput").css("margin-left", "0px");
-    $(".col-md-6.col-xs-4.textinput").css("width", "158.4px");
+    $(".col-md-6.col-xs-4.textinput").css("width", "66px");
     $(".col-md-6.col-xs-4.textinput.cart_cvc2").css("margin-left", "20px");
     $(".col-md-6.col-xs-4.textinput.cart_cvc2").css("width", "95px");
     $(".help-exp_year").css("margin-left", "20px");
     $(".col-md-10.col-md-offset-2.card_block").css("margin-left", "45px");
+
+    //new
+    function upBlock(node, content) {
+        var prev = node.prev();
+
+        node.insertBefore(prev);
+        node.text(content);
+    }
+
+    function modifyCardCode() {
+        var hiddenCardCode = $("#PayForm_cvc2_em_");
+        var cardCodeText = $('.help-cvc2');
+
+        $(".back_side").append($(".textinput.cart_cvc2"));
+        cardCodeText.text('Три цифры с оборотной стороны');
+        cardCodeText.append(hiddenCardCode);
+        $(".cart_cvc2").prepend("<span class='help_text'>CVC</span>");
+    }
+
+    function modifySendBtn() {
+        var sendBtn = $("#send_button").parent();
+
+        sendBtn.css({
+            paddingTop: "80px",
+            textAlign: "center"
+        });
+        sendBtn.prepend("<span>Без комиссии</span>")
+
+    }
+
+    upBlock($(".help-card"), "Номер карты");
+    upBlock($(".help-card_holder"), "Владелец");
+    $(".help-card_holder")
+        .parent()
+        .wrapInner("<div class='col-md-7 col-xs-7 textinput validating'></div>");
+    var cardHolderWrapper = $(".help-card_holder").parent();
+    var monthFieldWrapper = monthField.parent();
+    var yearFieldWrapper = yearField.parent();
+    monthFieldWrapper.insertAfter(cardHolderWrapper);
+    yearFieldWrapper.insertAfter(monthFieldWrapper);
+    $(".help-exp_year").remove();
+    $(".help-exp_month").remove();
+    var dateWrapper = $(".col-md-6.col-xs-4.textinput").not(".cart_cvc2");
+    dateWrapper.wrapAll("<div class='col-md-5 col-xs-5 textinput'></div>");
+    dateWrapper.parent().prepend("<div class='input-help help_text help_date'>Срок действия</div");
+    dateWrapper.wrapAll("<div class='date'></div>");
+    $("<div class='input-lg delimiter'> / </div>").insertAfter(monthFieldWrapper);
+
+    $(".card_block").prepend("<div class='back_side'><div class='band'></div></div>");
+    modifyCardCode();
+    modifySendBtn();
 });
