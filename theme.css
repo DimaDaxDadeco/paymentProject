@@ -258,7 +258,7 @@ header .logo a {
 }
 
 .footer {
-    margin: 26px auto 0;
+    margin: 26px auto 40px;
     text-align: center;
     font-size: 15px;
     color: #808080;
@@ -532,4 +532,15 @@ a:focus {
     margin: 0 15px;
     font-size: 11px;
     opacity: 0.6;
+}
+
+.additional-info {
+    color: #808080;
+}
+
+.security {
+    background: url(./logo_security.svg) no-repeat;
+    width: 183px;
+    height: 27px;
+    margin: 11px auto 41px;
 }

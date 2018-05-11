@@ -69,14 +69,14 @@ $(document).ready(function() {
     $(".cert-logo.col-lg-4.col-md-4.text-left.col-lg-offset-3.col-md-offset-3").css("margin-top", "40px");
     $(".copyright.col-lg-5.col-md-5.col-sm-12.col-sx-12").remove();
     var summ = $(".summ").html();
-    $(".btn.btn-block.btn-lg").val(`Оплатить ${summ} Р`);
+    $(".btn.btn-block.btn-lg").val(`Оплатить ${summ} &#8381;`);
     $(".logo.col-lg-5.col-md-5.col-sm-12.col-sx-12").css("width", "100%");
     $(".info.col-lg-4.col-md-4.visible-lg-block.visible-md-block.text-left.col-lg-offset-3.col-md-offset-3").remove();
     $(".pay-methods").children(".container").addClass("pay-form-frame");
     $(".visible-xs-inline").remove();
     //var invoiceInfo = "Оплата счёта \"Контур.Фокус\"/*/ca9b3ad1-74d4-44fa-9f4e-8d4344c52204/*/89784521547".split("/*/");
-    var invoiceInfo = $(".invoice-info").html().split("/*/");
-    var [serviceName, billId, billNumber] = invoiceInfo;
+    var invoiceInfo = $(".invoice-info").html();
+
     $(".invoice-info").remove();
     $(".invoice-summ").remove();
     $(".invoice-from").remove();
@@ -85,11 +85,11 @@ $(document).ready(function() {
     var infoDiv =
         '<div class="col-md-12" style="text-align: center; margin-bottom: 25px; margin-top: 20px; display: flex; flex-direction: column;"> ' +
             '<span class="payment-info">' +
-            serviceName.substring(14, serviceName.length - 1) +
+            invoiceInfo.substring(14, invoiceInfo.length - 1) +
             ' на сумму ' +
             '<span class="summ">' +
             summ +
-            '</span> Р' +
+            '</span> &#8381;' +
             '</span>' +
             '</div>';
 
@@ -186,7 +186,15 @@ $(document).ready(function() {
             textAlign: "center"
         });
         sendBtn.prepend("<span>Без комиссии</span>")
+    }
 
+    function additionalInfo() {
+        var sendBtn = $("#send_button").parent();
+        var text = "<span>Данные защищены по международному стандарту PCI DSS</span>"
+        var security = "<div class='security'></div>";
+        var content = "<div class=additional-info>" + text + security + "</div>";
+
+        sendBtn.append(content)
     }
 
     upBlock($(".help-card"), "Номер карты");
@@ -210,4 +218,5 @@ $(document).ready(function() {
     $(".card_block").prepend("<div class='back_side'><div class='band'></div></div>");
     modifyCardCode();
     modifySendBtn();
+    additionalInfo();
 });
