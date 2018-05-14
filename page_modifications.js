@@ -2,6 +2,58 @@ $(document).ready(function() {
     if (typeof SPG_FORM_ADAPTIVE === 'undefined' || !SPG_FORM_ADAPTIVE) {
         return;
     }
+
+    function upBlock(node, content) {
+        var prev = node.prev();
+
+        node.insertBefore(prev);
+        node.text(content);
+    }
+
+    function modifyCardCode() {
+        var hiddenCardCode = $("#PayForm_cvc2_em_");
+        var cardCodeText = $('.help-cvc2');
+
+        $(".back_side").append($(".textinput.cart_cvc2"));
+        cardCodeText.text('Три цифры с оборотной стороны');
+        cardCodeText.append(hiddenCardCode);
+        $(".cart_cvc2").prepend("<span class='help_text'>CVC</span>");
+        $("#PayForm_cvc2").prop("type", "text");
+    }
+
+    function modifySendBtn() {
+        var sendBtn = $("#send_button").parent();
+
+        sendBtn.css({
+            paddingTop: "80px",
+            textAlign: "center"
+        });
+        sendBtn.prepend("<span>Без комиссии</span>");
+    }
+
+    function additionalInfo() {
+        var sendBtn = $("#send_button").parent();
+        var text = "<span>Данные защищены по международному стандарту PCI DSS</span>"
+        var security = "<div class='security'></div>";
+        var content = "<div class=additional-info>" + text + security + "</div>";
+
+        sendBtn.append(content);
+    }
+
+    function removeAddClass(removedClass, addedClass) {
+        var el = $('.' + removedClass);
+
+        el.removeClass(removedClass);
+
+        if (addedClass) {
+            el.addClass(addedClass);
+        }
+    }
+
+    function validation(className) {
+        return $("<div class='validation-field " + className + "'></div>");
+    }
+
     $(".img-responsive").css("width", "300px");
     $(".img-responsive").css("margin-top", "18px");
     $(".img-responsive").css("margin-bottom", "-10px");
@@ -122,7 +174,7 @@ $(document).ready(function() {
     $(".footer .container .row").html(bankLink + contacts);
     $(".col-md-6.col-xs-4.textinput.validating").css("max-width", "66px");
     $("#PayForm_exp_year").css("max-width", "66px");
-    $("#PayForm_cvc2").css("max-width", "76px");
+    $("#PayForm_cvc2").css("max-width", "80px");
 
     $(".col-md-6.col-xs-4.textinput.cart_cvc2").css("max-width", "100px");
     $(".col-md-6.col-xs-4.textinput.cart_cvc2").css("margin-left", "20px");
@@ -160,43 +212,6 @@ $(document).ready(function() {
     $(".help-exp_year").css("margin-left", "20px");
     $(".col-md-10.col-md-offset-2.card_block").css("margin-left", "45px");
 
-    //new
-    function upBlock(node, content) {
-        var prev = node.prev();
-
-        node.insertBefore(prev);
-        node.text(content);
-    }
-
-    function modifyCardCode() {
-        var hiddenCardCode = $("#PayForm_cvc2_em_");
-        var cardCodeText = $('.help-cvc2');
-
-        $(".back_side").append($(".textinput.cart_cvc2"));
-        cardCodeText.text('Три цифры с оборотной стороны');
-        cardCodeText.append(hiddenCardCode);
-        $(".cart_cvc2").prepend("<span class='help_text'>CVC</span>");
-    }
-
-    function modifySendBtn() {
-        var sendBtn = $("#send_button").parent();
-
-        sendBtn.css({
-            paddingTop: "80px",
-            textAlign: "center"
-        });
-        sendBtn.prepend("<span>Без комиссии</span>")
-    }
-
-    function additionalInfo() {
-        var sendBtn = $("#send_button").parent();
-        var text = "<span>Данные защищены по международному стандарту PCI DSS</span>"
-        var security = "<div class='security'></div>";
-        var content = "<div class=additional-info>" + text + security + "</div>";
-
-        sendBtn.append(content)
-    }
-
     upBlock($(".help-card"), "Номер карты");
     upBlock($(".help-card_holder"), "Владелец");
     $(".help-card_holder")
@@ -219,4 +234,11 @@ $(document).ready(function() {
     modifyCardCode();
     modifySendBtn();
     additionalInfo();
+    removeAddClass('help-card');
+    validation('help-card').insertAfter(cardField);
+    removeAddClass('help-card_holder');
+    validation('help-exp_month').insertAfter($('#PayForm_exp_month'));
+    validation('help-exp_year').insertAfter($('#PayForm_exp_year'));
+    removeAddClass('help-cvc2', 'cvc2');
+    validation('help-cvc2').insertAfter($('#PayForm_cvc2'));
 });

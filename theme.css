@@ -157,6 +157,7 @@ header .logo a {
     font-size: 24px;
     padding: 14px 19px 18px;
     height: 55px;
+    float: none;
 }
 
 .input-card {
@@ -393,154 +394,164 @@ header .logo a {
         margin: 0 auto;
     }
 
-    /*.footer .copyright {
-        line-height: 96px;
+    .bank_link {
+        float: left;
+        margin-left: 5px;
     }
 
-    .footer .cert-logo {
+    .link {
+        color: #00AA90;
+        text-decoration: none;
+    }
+
+    .link:hover,
+    .link:active {
+        color: #00BDA0;
+        text-decoration: none;
+    }
+
+    .link:focus {
+        text-decoration: none;
+    }
+
+    .link.grey {
+        color: #808080;
+    }
+
+    .link.grey:hover,
+    .link.grey:active {
+        color: #00AA90;
+    }
+
+    .contacts {
         float: right;
-        margin-left: 0;
-        width: 450px;
-        margin-top: 0;
-    }*/
-}
-@media (min-width: 1200px) {
-    /*.card_block {
-        right: -185px;
-        margin: 0 auto;
-    }*/
-}
+        margin-right: 5px;
+    }
 
-.bank_link {
-    float: left;
-    margin-left: 5px;
-}
+    .visible-xs-inline {
+        display: none !important;
+    }
 
-.link {
-    color: #00AA90;
-    text-decoration: none;
-}
+    .help_text {
+        font-family: "Segoe UI";
+        font-size: 18px;
+        margin: 0;
+        color: #808080;
+        line-height: 20px;
+    }
 
-.link:hover,
-.link:active {
-    color: #00BDA0;
-    text-decoration: none;
-}
+    a:hover {
+        color: #09d7ba;
+    }
 
-.link:focus {
-    text-decoration: none;
-}
+    a:focus {
+        color: #09d7ba;
+    }
 
-.link.grey {
-    color: #808080;
-}
+    .date {
+        float: right;
+    }
 
-.link.grey:hover,
-.link.grey:active {
-    color: #00AA90;
-}
+    .help_date {
+        text-align: right;
+        padding-right: 50px;
+    }
 
-.contacts {
-    float: right;
-    margin-right: 5px;
-}
+    .delimiter {
+        float: left;
+        margin-top: 10px;
+    }
 
-.visible-xs-inline {
-    display: none !important;
-}
+    .card-name {
+        background: #ddd;
+        margin-top: -40px;
+        margin-right: -40px;
+        float: right;
+        border-radius: 0 18px;
+        font-size: 18px;
+        padding: 20px 40px;
+    }
 
-.help_text {
-    font-family: "Segoe UI";
-    font-size: 18px;
-    margin: 0;
-    color: #808080;
-    line-height: 20px;
-}
+    .card-logo {
+        display: inline-block;
+        vertical-align: middle;
+        background: url(./logo_mastercard_card.svg) no-repeat;
+        width: 49px;
+        height: 41px;
+        margin-left: 20px;
+    }
 
-a:hover {
-    color: #09d7ba;
-}
+    .back_side {
+        width: 582px;
+        background: #E5E5E5;
+        border: 1px solid #E0E0E0;
+        border-radius: 18px;
+        padding-top: 30px;
+        height: 351px;
+        position: absolute;
+        left: 156px;
+        top: 33px;
+        box-shadow: 0 4px 11px 0 rgba(0,0,0,0.05);
+    }
 
-a:focus {
-    color: #09d7ba;
-}
+    .band {
+        background: #C9C9C9;
+        float: right;
+        width: 178px;
+        height: 60px;
+    }
 
-.date {
-    float: right;
-}
+    .cvc2 {
+        display: inline-block;
+        font-size: 12px;
+        margin-top: 9px;
+    }
 
-.help_date {
-    text-align: right;
-    padding-right: 50px;
-}
+    .card-container::after {
+        content: '';
+    }
 
-.delimiter {
-    float: left;
-    margin-top: 10px;
-}
+    .dot {
+        margin: 0 15px;
+        font-size: 11px;
+        opacity: 0.6;
+    }
 
-.card-name {
-    background: #ddd;
-    margin-top: -40px;
-    margin-right: -40px;
-    float: right;
-    border-radius: 0 18px;
-    font-size: 18px;
-    padding: 20px 40px;
-}
+    .additional-info {
+        color: #808080;
+    }
 
-.card-logo {
-    display: inline-block;
-    vertical-align: middle;
-    background: url(./logo_mastercard_card.svg) no-repeat;
-    width: 49px;
-    height: 41px;
-    margin-left: 20px;
-}
+    .security {
+        background: url(./logo_security.svg) no-repeat;
+        width: 183px;
+        height: 27px;
+        margin: 11px auto 41px;
+    }
 
-.back_side {
-    width: 582px;
-    background: #E5E5E5;
-    border: 1px solid #E0E0E0;
-    border-radius: 18px;
-    padding-top: 30px;
-    height: 351px;
-    position: absolute;
-    left: 156px;
-    top: 33px;
-    box-shadow: 0 4px 11px 0 rgba(0,0,0,0.05);
-}
+    .validation-field {
+        display: none;
+        position: absolute;
+        background: #FFF;
+        padding: 15px 20px;
+        filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+        -webkit-filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+        z-index: 1;
+        margin-top: 10px;
+        white-space: nowrap;
+    }
 
-.band {
-    background: #C9C9C9;
-    float: right;
-    width: 178px;
-    height: 60px;
-}
+    .validation-field::after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-style: solid;
+        border-color: transparent transparent white;
+        top: -16px;
+        left: 10px;
+        border-width: 8px;
+    }
 
-.help-cvc2 {
-    display: inline-block;
-    font-size: 12px;
-    margin-top: 9px;
-}
-
-.card-container::after {
-    content: '';
-}
-
-.dot {
-    margin: 0 15px;
-    font-size: 11px;
-    opacity: 0.6;
-}
-
-.additional-info {
-    color: #808080;
-}
-
-.security {
-    background: url(./logo_security.svg) no-repeat;
-    width: 183px;
-    height: 27px;
-    margin: 11px auto 41px;
+    .input-error + .validation-field {
+        display: block;
+    }
 }
