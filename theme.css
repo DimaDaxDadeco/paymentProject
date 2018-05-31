@@ -538,6 +538,7 @@ header .logo a {
         z-index: 1;
         margin-top: 10px;
         white-space: nowrap;
+        color: #333;
     }
 
     .validation-field::after {
