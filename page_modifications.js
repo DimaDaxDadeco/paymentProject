@@ -18,7 +18,6 @@ $(document).ready(function() {
         cardCodeText.text('Три цифры с оборотной стороны');
         cardCodeText.append(hiddenCardCode);
         $(".cart_cvc2").prepend("<span class='help_text'>CVC</span>");
-        $("#PayForm_cvc2").prop("type", "text");
     }
 
     function modifySendBtn() {
