@@ -25,7 +25,7 @@ $(document).ready(function() {
         var sendBtn = $("#send_button").parent();
 
         sendBtn.css({
-            paddingTop: "80px",
+            paddingTop: "60px",
             textAlign: "center"
         });
         sendBtn.prepend("<span>Без комиссии</span>");
