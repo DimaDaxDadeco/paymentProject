@@ -521,8 +521,8 @@ header .logo a {
     }
 
     .security {
-        background: url(./logo_security.svg) no-repeat;
-        width: 183px;
+        background: url(./logo_security.png) no-repeat;
+        width: 130px;
         height: 27px;
         margin: 11px auto 35px;
     }
